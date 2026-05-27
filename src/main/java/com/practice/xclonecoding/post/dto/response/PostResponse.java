@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 public class PostResponse {
 
     private Long postId;
+    private Long writerId;
     private String nickname;
     private String content;
     private String image;
@@ -19,6 +20,7 @@ public class PostResponse {
     public static PostResponse from(Post post) {
         return PostResponse.builder()
                 .postId(post.getId())
+                .writerId(post.getWriter().getId())
                 .nickname(post.getWriter().getNickname())
                 .content(post.getContent())
                 .image(post.getImage())
